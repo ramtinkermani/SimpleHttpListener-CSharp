@@ -6,20 +6,20 @@ Initially, running a simple self-hosting OWIN application that serves HTTP(S) en
 
 ## System Characteristics
 
-An embedded device running a custom Yocto Linux
-Single core 1.25 GHz 32 bit Atom CPU
-360 MB of RAM
-Mono Version: 4.2.1.102
+- An embedded device running a custom Yocto Linux
+- Single core 1.25 GHz 32 bit Atom CPU
+- 360 MB of RAM
+- Mono Version: 4.2.1.102
 
 ## Configuring the application
 
-You can configure the HTTP(S) port and the protocol (HTTP vs HTTPS) in the webconfig.json file. The host name is irrelevant here.
-If using HTTPS, you need to create a self-signed Server certifiate for the server.
-Also Mono implementation of the HTTPS requests the Client to send a (Any!) Client certificates to the server in order to establish a secure communication. So you need to either create a Client certificate and import it into your browser or use an existing Client Certificate that is already available in your browser.
+- You can configure the HTTP(S) port and the protocol (HTTP vs HTTPS) in the webconfig.json file. The host name is irrelevant here.
+- If using HTTPS, you need to create a self-signed Server certifiate for the server.
+- Also Mono implementation of the HTTPS requests the Client to send a (Any!) Client certificates to the server in order to establish a secure communication. So you need to either create a Client certificate and import it into your browser or use an existing Client Certificate that is already available in your browser.
 
 ## Profiling
 
 To observe the spikes, once you run the application you can find the PID of the process using the following command: 
-$ pgrep mono 
+- $ pgrep mono 
 and then use that PID in the following command to print out the CPU/Memory usage. You can either write that data to a file for a couple of minutes or simply keep an eye on the numbers to observe the CPU spiking up to 100% every ~30 seconds. 
-$ top -p <PID>
+- $ top -p <PID>
