@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Oh yeah!</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            GetData();
+        });
+
+        function GetData() {
+            var baseUrl = window.location.origin;
+            var theUrl = baseUrl + "/api/?rnd=" + Date.now();
+
+            $.ajax({
+                url: theUrl,
+                type: "GET",
+                success: renderData,
+                error: displayError
+            });
+        }
+
+        function renderData(data) {
+            console.log(data);
+            $("#resultsContainer").prepend(data + "<br>");
+            setTimeout(GetData, 1000);
+        }
+
+        function displayError(error) {
+            console.log(error);
+        }
+
+    </script>
+    <div id="resultsContainer">
+
+    </div>
+</body>
+</html>
