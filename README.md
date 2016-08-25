@@ -22,4 +22,4 @@ Initially, running a simple self-hosting OWIN application that serves HTTP(S) en
 To observe the spikes, once you run the application you can find the PID of the process using the following command: 
 - $ pgrep mono 
 and then use that PID in the following command to print out the CPU/Memory usage. You can either write that data to a file for a couple of minutes or simply keep an eye on the numbers to observe the CPU spiking up to 100% every ~30 seconds. 
-- $ top -p <PID>
+- $ top -p (PID)
